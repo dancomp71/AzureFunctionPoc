@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocAzureFunction01", "PocAzureFunction01\PocAzureFunction01.csproj", "{F9B56E5B-EE97-4D59-9AAB-FB13CD1ADB2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocAzureFunctionsForV2", "PocAzureFunctionsForV2\PocAzureFunctionsForV2.csproj", "{CC319716-F122-413C-BC07-1A80AA32A694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qdemo", "qdemo\qdemo.csproj", "{B9DAF500-A6BF-4CED-B30D-1254306F1F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbdemo", "sbdemo\sbdemo.csproj", "{23968AD4-0934-4D36-BA3C-2D4249F442C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "democli", "democli\democli.csproj", "{C7C074AC-3D5D-41B7-9097-C342BE47C443}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demowj", "demowj\demowj.csproj", "{49FA2A33-1959-4DA0-B115-02EE2252FB8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAzureFunc01", "demoaf1\DemoAzureFunc01.csproj", "{2C6F030F-2100-4C74-90BF-18F7654D92F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9B56E5B-EE97-4D59-9AAB-FB13CD1ADB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B56E5B-EE97-4D59-9AAB-FB13CD1ADB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B56E5B-EE97-4D59-9AAB-FB13CD1ADB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B56E5B-EE97-4D59-9AAB-FB13CD1ADB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC319716-F122-413C-BC07-1A80AA32A694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC319716-F122-413C-BC07-1A80AA32A694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC319716-F122-413C-BC07-1A80AA32A694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC319716-F122-413C-BC07-1A80AA32A694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DAF500-A6BF-4CED-B30D-1254306F1F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DAF500-A6BF-4CED-B30D-1254306F1F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DAF500-A6BF-4CED-B30D-1254306F1F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DAF500-A6BF-4CED-B30D-1254306F1F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23968AD4-0934-4D36-BA3C-2D4249F442C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23968AD4-0934-4D36-BA3C-2D4249F442C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23968AD4-0934-4D36-BA3C-2D4249F442C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23968AD4-0934-4D36-BA3C-2D4249F442C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C074AC-3D5D-41B7-9097-C342BE47C443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C074AC-3D5D-41B7-9097-C342BE47C443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C074AC-3D5D-41B7-9097-C342BE47C443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C074AC-3D5D-41B7-9097-C342BE47C443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FA2A33-1959-4DA0-B115-02EE2252FB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FA2A33-1959-4DA0-B115-02EE2252FB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FA2A33-1959-4DA0-B115-02EE2252FB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FA2A33-1959-4DA0-B115-02EE2252FB8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6F030F-2100-4C74-90BF-18F7654D92F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6F030F-2100-4C74-90BF-18F7654D92F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6F030F-2100-4C74-90BF-18F7654D92F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6F030F-2100-4C74-90BF-18F7654D92F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0915FE20-5ED1-4353-BF5D-2536C23AABE2}
+	EndGlobalSection
+EndGlobal
