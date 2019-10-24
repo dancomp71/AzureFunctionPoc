@@ -16,16 +16,33 @@ namespace demoaf1
     public static class TodoApi
     {
         public const string StorageConnectionStr = "AzureWebJobsStorage";
-        public const string StorageTableName = "todos";
+        
+        public const string QueueName = "todos";
+        
         public const string RouteUrl = "todo";
         public const string IdUrl = "{id}";
         public const string RouteIdUrl = RouteUrl + "/" + IdUrl;
+        
+        /// <summary>
+        /// table storage name
+        /// </summary>
+        public const string TableName = "todos";
+        
+        /// <summary>
+        /// default partition key for table storage
+        /// </summary>
         public const string PartitionKey = "TODO";
+        
+        /// <summary>
+        /// save queue items to blob storage
+        /// </summary>
+        public const string BlobBinding = "todos";
 
         [FunctionName("CreateTodo")]
         public static async Task<IActionResult> CreateTodo(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = RouteUrl)] HttpRequest req,
-            [Table(StorageTableName, Connection = StorageConnectionStr)] IAsyncCollector<TodoTableEntity> todoTable,
+            [Table(TableName, Connection = StorageConnectionStr)] IAsyncCollector<TodoTableEntity> todoTable,
+            [Queue(QueueName, Connection = StorageConnectionStr)] IAsyncCollector<Todo> todoQueue,
             ILogger log)
         {
             log.LogInformation("Creating a new todo list item");
@@ -40,6 +57,7 @@ namespace demoaf1
             };
 
             await todoTable.AddAsync(todo.To());
+            await todoQueue.AddAsync(todo);
 
             return new OkObjectResult(todo);
 
@@ -51,7 +69,7 @@ namespace demoaf1
         [FunctionName("GetTodo")]
         public static async Task<IActionResult> GetTodo(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = RouteUrl)] HttpRequest req,
-            [Table(StorageTableName, Connection = StorageConnectionStr)] CloudTable todoTable,
+            [Table(TableName, Connection = StorageConnectionStr)] CloudTable todoTable,
             ILogger log)
         {
             log.LogInformation("Getting todo list from CloudTable");
@@ -63,7 +81,7 @@ namespace demoaf1
         [FunctionName("GetTodoById")]
         public static IActionResult GetTodoById(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = RouteIdUrl)] HttpRequest req,
-            [Table(StorageTableName, PartitionKey, "{id}", Connection = StorageConnectionStr)] TodoTableEntity todo,
+            [Table(TableName, PartitionKey, "{id}", Connection = StorageConnectionStr)] TodoTableEntity todo,
             ILogger log,
             string id)
         {
@@ -79,7 +97,7 @@ namespace demoaf1
         [FunctionName("UpdateTodo")]
         public static async Task<IActionResult> UpdateTodo(
             [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = RouteIdUrl)] HttpRequest req,
-            [Table(StorageTableName, Connection = StorageConnectionStr)] CloudTable todoTable,
+            [Table(TableName, Connection = StorageConnectionStr)] CloudTable todoTable,
             ILogger log,
             string id)
         {
@@ -108,7 +126,7 @@ namespace demoaf1
         [FunctionName("DeleteTodo")]
         public static async Task<IActionResult> DeleteTodo(
             [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = RouteIdUrl)] HttpRequest req,
-            [Table(StorageTableName, Connection = StorageConnectionStr)] CloudTable todoTable,
+            [Table(TableName, Connection = StorageConnectionStr)] CloudTable todoTable,
             ILogger log,
             string id)
         {
